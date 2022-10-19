@@ -8,14 +8,18 @@
 // Since cookies are stored on the client, you shouldn't store sensitive data in them. Sessions are a better choice for storing sensitive data.
 
 // Set a cookie
-setcookie('name', 'Brad', time() + 86400 * 30); // 86400 = 1 day
-
+setcookie('name[one]', 'Brad', time() + 60); // 86400 = 1 day
+setcookie('name[two]', 'Kevin', time() + 60); // 86400 = 1 day
+setcookie('name[three]', 'Ryo', time() + 60); // 86400 = 1 day
 // echo time();
 
 // Get a cookie
 if (isset($_COOKIE['name'])) {
-  echo $_COOKIE['name'];
+  foreach($_COOKIE['name']  as $name => $value){
+    echo '<p>' . $name . ':' . $value . '</p>';
+  }
+
 }
 
 // Delete a cookie
-setcookie('name', '', time() - 86400);
+// setcookie('name', '', time() - 86400);

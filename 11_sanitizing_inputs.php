@@ -6,20 +6,20 @@
 */
 
 if (isset($_POST['submit'])) {
-  // $name = $_POST['email'];
+  // $name = $_POST['name'];
   // $email = $_POST['email'];
 
   // htmlspecialchars() - Convert special characters to HTML entities
-  // $name = htmlspecialchars($_POST['name']);
+  // $name = htmlspecialchars($_POST['name'],);
   // $email = htmlspecialchars($_POST['email']);
 
   // filter_var() - Sanitize data
-  // $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-  // $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+  $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
   // filter_input() - Sanitize inputs
-  $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-  $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+  // $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  // $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
   // FILTER_SANITIZE_STRING - Convert string to string with only alphanumeric, whitespace, and the following characters - _.:/
   // FILTER_SANITIZE_EMAIL - Convert string to a valid email address
@@ -38,12 +38,21 @@ if (isset($_POST['submit'])) {
   <label>Name: </label>
   <input type="text" name="name">
 </div>
+<?php 
+if(isset($_POST['submit'])){
+  echo '<h3>' . $name . '</h3>';
+}
+?>
 <br>
-<?php echo $email; ?>
 <div>
 <label>Email: </label>
   <input type="email" name="email">
 </div>
+<?php 
+if(isset($_POST['submit'])){
+  echo '<h3>' . $email . '</h3>';
+}
+?>
 <br>
   <input type="submit" name="submit" value="Submit">
 </form>

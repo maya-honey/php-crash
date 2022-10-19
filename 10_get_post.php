@@ -7,7 +7,7 @@
 
 if (isset($_POST['submit'])) {
   // echo '<h3>' . $GET['username'] . '</h3>';
-  echo '<h3>' . $_POST['username'] . '</h3>';
+  echo '<h3>' . $_POST['name'] . '</h3>';
 } ?>
 
 <!-- Pass data through a link -->
@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 <br><br>
 
 <!-- Pass data through a form -->
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+<form action="<?php echo "/php-crash/10_test.php"; ?>" method="POST">
 <div>
   <label>Name: </label>
   <input type="text" name="name">

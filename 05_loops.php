@@ -61,7 +61,7 @@ do {
 $numbers = [1, 2, 3, 4, 5];
 
 foreach ($numbers as $x) {
-  echo "Number: $x <br>";
+  // echo "Number: $x <br>";
 }
 
 // Use the indexes within the loop
@@ -82,5 +82,5 @@ $person = [
 
 // Get Keys
 foreach ($person as $key => $val) {
-  echo "${key} - ${val} <br>";
+  // echo "${key} - ${val} <br>";
 }
